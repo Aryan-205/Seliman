@@ -7,7 +7,7 @@ export default function CustomerLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <div className="min-h-screen flex flex-col bg-background w-full">
       <CustomerHeader />
       <main className="flex-1">{children}</main>
       <CartSheet />

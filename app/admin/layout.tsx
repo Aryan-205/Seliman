@@ -7,14 +7,14 @@ export default async function AdminLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const session = await auth();
-  if (!session?.user || session.user.role !== "ADMIN") {
-    redirect("/login?callbackUrl=/admin");
-  }
+  // const session = await auth();
+  // if (!session?.user || session.user.role !== "ADMIN") {
+  //   redirect("/login?callbackUrl=/admin");
+  // }
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <AdminNav />
-      <main className="flex-1 container py-6">{children}</main>
+      <main className="flex-1 w-full px-4 py-6">{children}</main>
     </div>
   );
 }

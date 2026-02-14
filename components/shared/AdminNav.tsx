@@ -11,7 +11,7 @@ const links = [
 export function AdminNav() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background">
-      <div className="container flex h-14 items-center px-4">
+      <div className="w-full flex h-14 items-center px-4">
         <Link href="/admin" className="font-semibold text-primary mr-8">
           Admin
         </Link>

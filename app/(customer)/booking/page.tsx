@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 
 export default function BookingPage() {
   return (
-    <div className="container px-4 py-12 max-w-xl mx-auto">
+    <div className="w-full px-4 py-12 max-w-xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}

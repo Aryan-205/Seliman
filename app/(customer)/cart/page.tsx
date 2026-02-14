@@ -51,7 +51,7 @@ export default function CartPage() {
 
   if (items.length === 0 && !message) {
     return (
-      <div className="container px-4 py-16 text-center">
+      <div className="w-full px-4 py-16 text-center">
         <h2 className="text-2xl font-semibold mb-2">Your cart is empty</h2>
         <p className="text-muted-foreground mb-6">Add items from the menu to get started.</p>
         <Button asChild>
@@ -62,7 +62,7 @@ export default function CartPage() {
   }
 
   return (
-    <div className="container px-4 py-8 max-w-2xl mx-auto">
+    <div className="w-full px-4 py-8 max-w-2xl mx-auto">
       <h1 className="text-2xl font-bold mb-6">Your Order</h1>
       {!tableNumber && (
         <p className="text-amber-600 dark:text-amber-500 text-sm mb-4">

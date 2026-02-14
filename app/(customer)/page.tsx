@@ -52,11 +52,11 @@ const item = {
 
 export default function LandingPage() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col w-full">
       {/* Hero */}
-      <section className="relative overflow-hidden border-b">
+      <section className="relative overflow-hidden border-b h-screen flex items-center justify-center">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent dark:from-primary/10" />
-        <div className="container relative px-4 py-24 md:py-32">
+        <div className="w-full relative px-4 py-24 md:py-32">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -87,7 +87,7 @@ export default function LandingPage() {
       </section>
 
       {/* Bento Grid */}
-      <section className="container px-4 py-16 md:py-24">
+      <section className="w-full py-16 md:py-24 h-screen flex items-center justify-center px-12">
         <motion.div
           variants={container}
           initial="hidden"
@@ -122,7 +122,7 @@ export default function LandingPage() {
 
       {/* CTA */}
       <section className="border-t bg-muted/30 py-16">
-        <div className="container px-4 text-center">
+        <div className="w-full px-4 text-center">
           <h2 className="text-2xl font-semibold">Ready to order?</h2>
           <p className="mt-2 text-muted-foreground">
             Scan the QR code at your table or open the menu on any device.

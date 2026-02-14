@@ -18,7 +18,7 @@ export default function TablePage() {
   }, [tableId, setTableNumber]);
 
   return (
-    <div className="container flex flex-col items-center justify-center min-h-[60vh] px-4">
+    <div className="w-full flex flex-col items-center justify-center min-h-[60vh] px-4">
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
