@@ -1,0 +1,50 @@
+{
+  "node": {
+    "006499743c44e52dc314f4486d570a13fd72779caf": {
+      "workers": {
+        "app/(customer)/menu/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Faryan%2FDocuments%2FProjects%2Frestaurant-saas%2Fapp%2Factions%2Fmenu.ts%22%2C%5B%5B%22006499743c44e52dc314f4486d570a13fd72779caf%22%2C%22getMenuItemsAction%22%5D%2C%5B%2240391a99f88c92584aa6cc2a55d6e9476ff7af8ff3%22%2C%22createMenuItemAction%22%5D%2C%5B%22405bcfee721cce5704edc4b16b52bc05aaa6896ab9%22%2C%22updateMenuItemAction%22%5D%2C%5B%2240d60db103a4f34a465e719fd05baa1d78ffe47b0b%22%2C%22deleteMenuItemAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/(customer)/menu/page": "action-browser"
+      }
+    },
+    "40391a99f88c92584aa6cc2a55d6e9476ff7af8ff3": {
+      "workers": {
+        "app/(customer)/menu/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Faryan%2FDocuments%2FProjects%2Frestaurant-saas%2Fapp%2Factions%2Fmenu.ts%22%2C%5B%5B%22006499743c44e52dc314f4486d570a13fd72779caf%22%2C%22getMenuItemsAction%22%5D%2C%5B%2240391a99f88c92584aa6cc2a55d6e9476ff7af8ff3%22%2C%22createMenuItemAction%22%5D%2C%5B%22405bcfee721cce5704edc4b16b52bc05aaa6896ab9%22%2C%22updateMenuItemAction%22%5D%2C%5B%2240d60db103a4f34a465e719fd05baa1d78ffe47b0b%22%2C%22deleteMenuItemAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/(customer)/menu/page": "action-browser"
+      }
+    },
+    "405bcfee721cce5704edc4b16b52bc05aaa6896ab9": {
+      "workers": {
+        "app/(customer)/menu/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Faryan%2FDocuments%2FProjects%2Frestaurant-saas%2Fapp%2Factions%2Fmenu.ts%22%2C%5B%5B%22006499743c44e52dc314f4486d570a13fd72779caf%22%2C%22getMenuItemsAction%22%5D%2C%5B%2240391a99f88c92584aa6cc2a55d6e9476ff7af8ff3%22%2C%22createMenuItemAction%22%5D%2C%5B%22405bcfee721cce5704edc4b16b52bc05aaa6896ab9%22%2C%22updateMenuItemAction%22%5D%2C%5B%2240d60db103a4f34a465e719fd05baa1d78ffe47b0b%22%2C%22deleteMenuItemAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/(customer)/menu/page": "action-browser"
+      }
+    },
+    "40d60db103a4f34a465e719fd05baa1d78ffe47b0b": {
+      "workers": {
+        "app/(customer)/menu/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Faryan%2FDocuments%2FProjects%2Frestaurant-saas%2Fapp%2Factions%2Fmenu.ts%22%2C%5B%5B%22006499743c44e52dc314f4486d570a13fd72779caf%22%2C%22getMenuItemsAction%22%5D%2C%5B%2240391a99f88c92584aa6cc2a55d6e9476ff7af8ff3%22%2C%22createMenuItemAction%22%5D%2C%5B%22405bcfee721cce5704edc4b16b52bc05aaa6896ab9%22%2C%22updateMenuItemAction%22%5D%2C%5B%2240d60db103a4f34a465e719fd05baa1d78ffe47b0b%22%2C%22deleteMenuItemAction%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/(customer)/menu/page": "action-browser"
+      }
+    }
+  },
+  "edge": {},
+  "encryptionKey": "G3ARw7FCZgR6dg+CRuvU7xSAXk5w5F47EKRxAhODics="
+}
