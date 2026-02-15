@@ -3,11 +3,12 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, ShoppingBag, X } from "lucide-react";
+import { Menu, ShoppingBag, X, Bell } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCartStore } from "@/store";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./ThemeToggle";
+import { createWaiterRequestAction } from "@/app/actions/waiter-requests";
 
 const nav = [
   { href: "/", label: "Home" },
@@ -19,8 +20,21 @@ const nav = [
 export function CustomerHeader() {
   const pathname = usePathname();
   const itemCount = useCartStore((s) => s.getItemCount());
+  const tableNumber = useCartStore((s) => s.tableNumber);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [waiterSending, setWaiterSending] = useState(false);
+  const [waiterMessage, setWaiterMessage] = useState<"success" | "error" | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  async function handleRequestWaiter() {
+    if (!tableNumber?.trim()) return;
+    setWaiterSending(true);
+    setWaiterMessage(null);
+    const { error } = await createWaiterRequestAction(tableNumber);
+    setWaiterSending(false);
+    setWaiterMessage(error ? "error" : "success");
+    if (!error) setTimeout(() => setWaiterMessage(null), 3000);
+  }
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -80,6 +94,26 @@ export function CustomerHeader() {
                   {item.label}
                 </Link>
               ))}
+            </div>
+          )}
+          {tableNumber?.trim() && (
+            <div className="flex items-center gap-1">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={handleRequestWaiter}
+                disabled={waiterSending}
+                title="Request waiter"
+                className={waiterMessage === "success" ? "text-green-600" : waiterMessage === "error" ? "text-destructive" : ""}
+              >
+                <Bell className="h-5 w-5" />
+              </Button>
+              {waiterMessage === "success" && (
+                <span className="text-xs text-green-600 dark:text-green-500 whitespace-nowrap">Request sent!</span>
+              )}
+              {waiterMessage === "error" && (
+                <span className="text-xs text-destructive whitespace-nowrap">Try again</span>
+              )}
             </div>
           )}
           <ThemeToggle />

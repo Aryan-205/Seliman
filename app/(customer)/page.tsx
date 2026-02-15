@@ -2,9 +2,18 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { UtensilsCrossed, QrCode, Clock, MapPin, ArrowRight } from "lucide-react";
+import { UtensilsCrossed, Bell, Clock, MapPin, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import Herosection from "@/components/landing/Herosection";
+import InfoSection from "@/components/landing/InfoSection";
+import CardSection from "@/components/landing/CardSection";
+import SingleImageSection from "@/components/landing/SingleImageSection";
+import DualCardSection from "@/components/landing/DualCardSection";
+import TextSection from "@/components/landing/TextSection";
+import MenuCardSection from "@/components/landing/MenuCardSection";
+import JapaneseTextSection from "@/components/landing/JapaneseTextSection";
+import Footer from "@/components/landing/Footer";
 
 const bentoItems = [
   {
@@ -15,9 +24,9 @@ const bentoItems = [
     className: "col-span-2 row-span-2 md:col-span-1 bg-primary/10 dark:bg-primary/20 border-primary/20",
   },
   {
-    title: "Scan & Order",
-    description: "Scan the QR code at your table to order. No app download required.",
-    icon: QrCode,
+    title: "Request Waiter",
+    description: "Need assistance? Request a waiter to come to your table.",
+    icon: Bell,
     href: "/menu",
     className: "col-span-2 md:col-span-1 bg-muted/50",
   },
@@ -54,37 +63,21 @@ export default function LandingPage() {
   return (
     <div className="flex flex-col w-full">
       {/* Hero */}
-      <section className="relative overflow-hidden border-b h-screen flex items-center justify-center">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent dark:from-primary/10" />
-        <div className="w-full relative px-4 py-24 md:py-32">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mx-auto max-w-3xl text-center"
-          >
-            <h1 className="text-4xl font-bold tracking-tight md:text-6xl">
-              Order from your table.
-              <span className="text-primary"> No wait.</span>
-            </h1>
-            <p className="mt-6 text-lg text-muted-foreground">
-              Scan the QR code, browse our menu, and send your order to the kitchen. 
-              Fresh food, seamless experience.
-            </p>
-            <div className="mt-10 flex flex-wrap justify-center gap-4">
-              <Button size="lg" asChild>
-                <Link href="/menu">
-                  View Menu
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link href="/booking">Book a Table</Link>
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <Herosection />
+      <InfoSection />
+      <CardSection />
+
+      <SingleImageSection image="/BackgroundImage1.jpg" />
+      <SingleImageSection image="/BackgroundImage2.jpg" />
+
+      <DualCardSection />
+
+      <TextSection />
+
+      {/* <MenuCardSection /> */}
+
+      <JapaneseTextSection />
+      <Footer />
 
       {/* Bento Grid */}
       <section className="w-full py-16 md:py-24 h-screen flex items-center justify-center px-12">
@@ -125,7 +118,7 @@ export default function LandingPage() {
         <div className="w-full px-4 text-center">
           <h2 className="text-2xl font-semibold">Ready to order?</h2>
           <p className="mt-2 text-muted-foreground">
-            Scan the QR code at your table or open the menu on any device.
+            Open the menu on any device. At your table? Request a waiter anytime.
           </p>
           <Button className="mt-6" size="lg" asChild>
             <Link href="/menu">Open Menu</Link>

@@ -115,3 +115,10 @@ model OrderItem {
 
   order Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
 }
+
+model WaiterRequest {
+  id           String   @id @default(cuid())
+  tableNumber  String
+  status       String   @default("PENDING")
+  createdAt    DateTime @default(now())
+}

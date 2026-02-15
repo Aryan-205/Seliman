@@ -8,7 +8,7 @@ export default function CustomerLayout({
 }) {
   return (
     <div className="min-h-screen flex flex-col bg-background w-full">
-      <CustomerHeader />
+      {/* <CustomerHeader /> */}
       <main className="flex-1">{children}</main>
       <CartSheet />
     </div>
