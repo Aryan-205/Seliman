@@ -74,7 +74,7 @@ export default function LandingPage() {
 
       <TextSection />
 
-      {/* <MenuCardSection /> */}
+      <MenuCardSection />
 
       <JapaneseTextSection />
       <Footer />
