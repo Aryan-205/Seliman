@@ -6,16 +6,22 @@ const MenuCardSection = () => {
     return (
         <div className="h-screen w-full flex justify-center items-center gap-8 p-12">
             {/* card 1 */}
-            <div className="h-full w-[320px] flex flex-col justify-between items-center py-12 relative">
+            <div className="h-full w-[320px] flex flex-col justify-between items-center py-12 relative shadow-[0_0_1px_0_rgba(255,255,255,0.1)]">
               <Image
                 src="/BackgroundTexture1.png"
                 alt="Background Texture"
                 fill
-                className="object-cover -z-10"
+                className="object-cover z-0"
               />
-              <FirstCardText color="#A00000" />
-              <FirstCardText2 />
-              <LogoIcon className="h-8 w-8" />
+              <div className="relative z-10">
+                <FirstCardText color="#A00000" />
+              </div>
+              <div className="relative z-10">
+                <FirstCardText2 />
+              </div>
+              <div className="relative z-10">
+                <LogoIcon className="h-2 w-4" />
+              </div>
             </div>
             {/* card 2 */}
             <div

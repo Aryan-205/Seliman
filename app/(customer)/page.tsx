@@ -79,7 +79,7 @@ export default function LandingPage() {
       <JapaneseTextSection />
       <Footer />
 
-      {/* Bento Grid */}
+      {/* Bento Grid
       <section className="w-full py-16 md:py-24 h-screen flex items-center justify-center px-12">
         <motion.div
           variants={container}
@@ -111,20 +111,7 @@ export default function LandingPage() {
             </motion.div>
           ))}
         </motion.div>
-      </section>
-
-      {/* CTA */}
-      <section className="border-t bg-muted/30 py-16">
-        <div className="w-full px-4 text-center">
-          <h2 className="text-2xl font-semibold">Ready to order?</h2>
-          <p className="mt-2 text-muted-foreground">
-            Open the menu on any device. At your table? Request a waiter anytime.
-          </p>
-          <Button className="mt-6" size="lg" asChild>
-            <Link href="/menu">Open Menu</Link>
-          </Button>
-        </div>
-      </section>
+      </section> */}
     </div>
   );
 }
