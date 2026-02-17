@@ -7,10 +7,12 @@ import { Input } from "@/components/ui/input";
 
 export default function BookingPage() {
   return (
-    <div className="w-full px-4 py-12 max-w-xl mx-auto">
+    <div className="w-full px-4 py-12 max-w-xl mx-auto h-screen flex items-center justify-center">
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="border border-white p-8 rounded-lg"
       >
         <h1 className="text-3xl font-bold mb-2">Reserve a Table</h1>
         <p className="text-muted-foreground mb-8">
@@ -43,7 +45,7 @@ export default function BookingPage() {
             <label className="text-sm font-medium">Email</label>
             <Input type="email" placeholder="you@example.com" required />
           </div>
-          <Button type="submit" className="w-full" size="lg">
+          <Button type="submit" className="w-full bg-[#A00000] text-white" size="lg">
             Request reservation
           </Button>
         </form>

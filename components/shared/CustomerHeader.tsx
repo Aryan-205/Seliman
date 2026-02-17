@@ -49,10 +49,10 @@ export function CustomerHeader() {
   }, [dropdownOpen]);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="fixed top-0 z-50 w-full backdrop-blur supports-[backdrop-filter]:bg-background/10">
       <div className="w-full flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2 font-semibold">
-          <span className="text-xl text-primary">Restaurant</span>
+          <span className="text-xl text-[#A00000]">Aryan</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6">
           {nav.map((item) => (
@@ -60,8 +60,8 @@ export function CustomerHeader() {
               key={item.href}
               href={item.href}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-primary",
-                pathname === item.href ? "text-primary" : "text-muted-foreground"
+                "text-sm font-medium transition-colors hover:text-[#A00000]",
+                pathname === item.href ? "text-[#c21919]" : "text-white"
               )}
             >
               {item.label}
@@ -116,7 +116,6 @@ export function CustomerHeader() {
               )}
             </div>
           )}
-          <ThemeToggle />
           <Button variant="ghost" size="icon" asChild>
             <Link href="/cart" className="relative">
               <ShoppingBag className="h-5 w-5" />

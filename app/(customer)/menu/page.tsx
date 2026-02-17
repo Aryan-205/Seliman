@@ -32,10 +32,11 @@ export default function MenuPage() {
   }, [setItems]);
 
   return (
-    <div className="w-full px-4 py-8">
+    <div className="w-full px-4 py-8 h-screen pt-24">
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
         className="mb-10"
       >
         <h1 className="text-3xl font-bold tracking-tight">Our Menu</h1>
