@@ -7,9 +7,9 @@ import CardRightText from "../icons/CardRightText";
 
 const CardSection = () => {
   return (
-    <div className="w-full h-screen bg-black p-24 flex justify-between gap-2">
+    <div className="w-full min-h-screen h-auto md:h-screen bg-black p-4 md:p-24 flex flex-col md:flex-row justify-between gap-8 md:gap-2">
       {/* card */}
-      <div className="flex justify-center items-center w-full flex-1 h-full bg-[#FFF9E9]">
+      <div className="flex justify-center items-center w-full flex-1 h-[400px] md:h-full bg-[#FFF9E9] py-8 md:py-0">
         <div className="flex flex-col gap-4">
           <div className="w-full flex justify-center">
             <CardIcon />
@@ -29,7 +29,7 @@ const CardSection = () => {
         </div>
       </div>
       {/* card */}
-      <div className="flex justify-center items-center w-full flex-1 h-full bg-[#FFF9E9]">
+      <div className="flex justify-center items-center w-full flex-1 h-[400px] md:h-full bg-[#FFF9E9] py-8 md:py-0">
         <div className="flex flex-col gap-4">
           <div className="w-full flex justify-center">
             <CardIcon />
@@ -49,7 +49,7 @@ const CardSection = () => {
         </div>
       </div>
       {/* card */}
-      <div className="flex justify-center items-center w-full flex-1 h-full bg-[#FFF9E9]">
+      <div className="flex justify-center items-center w-full flex-1 h-[400px] md:h-full bg-[#FFF9E9] py-8 md:py-0">
         <div className="flex flex-col gap-4">
           <div className="w-full flex justify-center">
             <CardIcon />
