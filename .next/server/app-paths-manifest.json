@@ -1,7 +1,8 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
+  "/admin/page": "app/admin/page.js",
   "/(customer)/menu/page": "app/(customer)/menu/page.js",
   "/(customer)/booking/page": "app/(customer)/booking/page.js",
-  "/(customer)/page": "app/(customer)/page.js",
-  "/(customer)/location/page": "app/(customer)/location/page.js"
+  "/(customer)/cart/page": "app/(customer)/cart/page.js",
+  "/admin/qr/page": "app/admin/qr/page.js",
+  "/(customer)/table/[id]/page": "app/(customer)/table/[id]/page.js"
 }

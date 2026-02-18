@@ -1,9 +1,8 @@
 import Link from "next/link";
-import { LayoutDashboard, UtensilsCrossed, QrCode } from "lucide-react";
+import { UtensilsCrossed, QrCode } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const links = [
-  { href: "/admin", label: "Orders", icon: LayoutDashboard },
   { href: "/admin/menu", label: "Menu", icon: UtensilsCrossed },
   { href: "/admin/qr", label: "QR Codes", icon: QrCode },
 ];

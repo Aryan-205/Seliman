@@ -32,8 +32,17 @@ export async function sendOrderAction(payload: unknown): Promise<SendOrderResult
     revalidatePath("/admin");
     revalidatePath("/admin/orders");
     return { orderId: order.id };
-  } catch {
-    return { error: "Unable to send order. Please try again or contact staff." };
+  } catch (err) {
+    const message = err instanceof Error ? err.message : "Unknown error";
+    if (process.env.NODE_ENV === "development") {
+      console.error("[sendOrderAction]", err);
+    }
+    return {
+      error:
+        process.env.NODE_ENV === "development"
+          ? `Order failed: ${message}`
+          : "Unable to send order. Please try again or contact staff.",
+    };
   }
 }
 
@@ -44,7 +53,15 @@ export async function getOrdersAction(status?: string) {
       orderBy: { createdAt: "desc" },
       include: { items: true },
     });
-    return { orders, error: null };
+    // Serialize for Client Components: Prisma Decimal is not a plain object
+    const serialized = orders.map((order) => ({
+      ...order,
+      items: order.items.map((item) => ({
+        ...item,
+        price: Number(item.price),
+      })),
+    }));
+    return { orders: serialized, error: null };
   } catch {
     return { orders: [], error: null };
   }

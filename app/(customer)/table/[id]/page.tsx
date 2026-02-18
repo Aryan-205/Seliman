@@ -18,15 +18,22 @@ export default function TablePage() {
   }, [tableId, setTableNumber]);
 
   return (
-    <div className="w-full flex flex-col items-center justify-center min-h-[60vh] px-4">
+    <div 
+      className="w-full flex flex-col items-center justify-center h-screen px-4"
+      style={{
+        backgroundImage: "url('/KissoJapaneseRestaurantatTheWestinGrandeSukhumvit1.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+      >
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         className="text-center max-w-md"
       >
-        <p className="text-muted-foreground mb-2">You're at</p>
-        <h1 className="text-4xl font-bold text-primary mb-2">Table {tableId}</h1>
-        <p className="text-muted-foreground mb-8">
+        <p className="text-white mb-2 backdrop-blur-sm">You're at</p>
+        <h1 className="text-4xl font-bold text-[#A00000] mb-2 backdrop-blur-sm">Table {tableId}</h1>
+        <p className="text-white mb-8 font-medium backdrop-blur-sm">
           Your table number is saved. Open the menu to start ordering.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

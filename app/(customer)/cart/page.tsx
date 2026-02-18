@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Minus, Plus, Trash2, Send } from "lucide-react";
+import { Minus, Plus, Trash2, Send, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useCartStore } from "@/store";
@@ -51,7 +51,7 @@ export default function CartPage() {
 
   if (items.length === 0 && !message) {
     return (
-      <div className="w-full px-4 py-16 text-center">
+      <div className="w-full px-4 py-16 text-center h-screen flex flex-col items-center justify-center">
         <h2 className="text-2xl font-semibold mb-2">Your cart is empty</h2>
         <p className="text-muted-foreground mb-6">Add items from the menu to get started.</p>
         <Button asChild>
@@ -62,7 +62,7 @@ export default function CartPage() {
   }
 
   return (
-    <div className="w-full px-4 py-8 max-w-2xl mx-auto">
+    <div className="w-full px-4 py-8 max-w-2xl mx-auto h-screen pt-24">
       <h1 className="text-2xl font-bold mb-6">Your Order</h1>
       {!tableNumber && (
         <p className="text-amber-600 dark:text-amber-500 text-sm mb-4">
@@ -145,7 +145,11 @@ export default function CartPage() {
           onClick={handleSendOrder}
           disabled={!canSend || loading}
         >
-          <Send className="h-4 w-4 mr-2" />
+          {loading ? (
+            <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+          ) : (
+            <Send className="h-4 w-4 mr-2" />
+          )}
           {loading ? "Sending…" : "Send Order"}
         </Button>
         <Button variant="outline" asChild>

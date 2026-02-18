@@ -52,15 +52,15 @@ export function CustomerHeader() {
     <header className="fixed top-0 z-50 w-full backdrop-blur supports-[backdrop-filter]:bg-background/10">
       <div className="w-full flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2 font-semibold">
-          <span className="text-xl text-[#A00000]">Aryan</span>
+          <span className="text-2xl text-[#A00000]">Aryan</span>
         </Link>
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-8">
           {nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-[#A00000]",
+                "text-xl font-medium transition-colors hover:text-[#A00000]",
                 pathname === item.href ? "text-[#c21919]" : "text-white"
               )}
             >
@@ -118,7 +118,7 @@ export function CustomerHeader() {
           )}
           <Button variant="ghost" size="icon" asChild>
             <Link href="/cart" className="relative">
-              <ShoppingBag className="h-5 w-5" />
+              <ShoppingBag className="h-8 w-8" />
               {itemCount > 0 && (
                 <span className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-primary text-primary-foreground text-xs flex items-center justify-center">
                   {itemCount}

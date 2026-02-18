@@ -3,8 +3,8 @@ import { z } from "zod";
 export const orderItemSchema = z.object({
   menuItemId: z.string().min(1, "Menu item ID is required"),
   name: z.string().min(1, "Item name is required"),
-  price: z.number().positive("Price must be positive"),
-  quantity: z.number().int().min(1, "Quantity must be at least 1"),
+  price: z.coerce.number().positive("Price must be positive"),
+  quantity: z.coerce.number().int().min(1, "Quantity must be at least 1"),
   notes: z.string().optional(),
 });
 
