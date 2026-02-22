@@ -46,6 +46,8 @@ export async function createMenuItemAction(formData: unknown) {
     });
     revalidatePath("/menu");
     revalidatePath("/admin/menu");
+    revalidatePath("/staff/menu");
+    revalidatePath("/superadmin/menu");
     return { error: null };
   } catch (e) {
     console.error(e);
@@ -70,6 +72,8 @@ export async function updateMenuItemAction(formData: unknown) {
     });
     revalidatePath("/menu");
     revalidatePath("/admin/menu");
+    revalidatePath("/staff/menu");
+    revalidatePath("/superadmin/menu");
     return { error: null };
   } catch (e) {
     console.error(e);
@@ -82,6 +86,8 @@ export async function deleteMenuItemAction(id: string) {
     await prisma.menuItem.delete({ where: { id } });
     revalidatePath("/menu");
     revalidatePath("/admin/menu");
+    revalidatePath("/staff/menu");
+    revalidatePath("/superadmin/menu");
     return { error: null };
   } catch (e) {
     console.error(e);

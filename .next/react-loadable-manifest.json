@@ -1,15 +1,19 @@
 {
-  "app/admin/qr/page.tsx -> jspdf": {
-    "id": "app/admin/qr/page.tsx -> jspdf",
+  "app/superadmin/qr/page.tsx -> jspdf": {
+    "id": "app/superadmin/qr/page.tsx -> jspdf",
     "files": [
       "static/chunks/_app-pages-browser_node_modules_jspdf_dist_jspdf_es_min_js.js"
     ]
   },
-  "app/admin/qr/page.tsx -> qrcode": {
-    "id": "app/admin/qr/page.tsx -> qrcode",
+  "app/superadmin/qr/page.tsx -> qrcode": {
+    "id": "app/superadmin/qr/page.tsx -> qrcode",
     "files": [
       "static/chunks/_app-pages-browser_node_modules_qrcode_lib_browser_js.js"
     ]
+  },
+  "components/shared/MenuManagement.tsx -> @/app/actions/menu": {
+    "id": "components/shared/MenuManagement.tsx -> @/app/actions/menu",
+    "files": []
   },
   "node_modules/jspdf/dist/jspdf.es.min.js -> canvg": {
     "id": "node_modules/jspdf/dist/jspdf.es.min.js -> canvg",

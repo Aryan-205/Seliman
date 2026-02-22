@@ -67,6 +67,50 @@ export async function getOrdersAction(status?: string) {
   }
 }
 
+export async function getOrdersByTableAction(tableNumber: string) {
+  if (!tableNumber?.trim()) return { orders: [], error: null };
+  try {
+    const orders = await prisma.order.findMany({
+      where: {
+        tableNumber: tableNumber.trim(),
+        status: { notIn: ["SERVED", "CANCELLED"] },
+      },
+      orderBy: { createdAt: "desc" },
+      include: { items: true },
+    });
+    const serialized = orders.map((order) => ({
+      ...order,
+      items: order.items.map((item) => ({
+        ...item,
+        price: Number(item.price),
+      })),
+    }));
+    return { orders: serialized, error: null };
+  } catch {
+    return { orders: [], error: null };
+  }
+}
+
+export async function getOrderByIdAction(orderId: string) {
+  try {
+    const order = await prisma.order.findUnique({
+      where: { id: orderId },
+      include: { items: true },
+    });
+    if (!order) return { order: null, error: "Order not found" };
+    const serialized = {
+      ...order,
+      items: order.items.map((item) => ({
+        ...item,
+        price: Number(item.price),
+      })),
+    };
+    return { order: serialized, error: null };
+  } catch {
+    return { order: null, error: "Failed to load order" };
+  }
+}
+
 export async function updateOrderStatusAction(orderId: string, status: string) {
   try {
     await prisma.order.update({
@@ -75,6 +119,8 @@ export async function updateOrderStatusAction(orderId: string, status: string) {
     });
     revalidatePath("/admin");
     revalidatePath("/admin/orders");
+    revalidatePath("/staff");
+    revalidatePath("/superadmin");
     return { error: null };
   } catch (e) {
     console.error(e);

@@ -3,14 +3,18 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { MenuList } from "@/components/shared/MenuList";
+import { YourOrdersStatus } from "@/components/shared/YourOrdersStatus";
 import { getMenuItemsAction } from "@/app/actions/menu";
-import { useMenuStore } from "@/store";
+import { useMenuStore, useCartStore, useQueueStore } from "@/store";
 import { CATEGORY_LABELS, type Category } from "@/lib/schemas";
 
 const CATEGORY_ORDER: Category[] = ["STARTER", "MAIN", "DRINK", "DESSERT", "SIDE"];
 
 export default function MenuPage() {
   const setItems = useMenuStore((s) => s.setItems);
+  const tableNumber = useCartStore((s) => s.tableNumber);
+  const assignedTableId = useQueueStore((s) => s.assignedTableId);
+  const displayTable = tableNumber?.trim() || assignedTableId || null;
 
   useEffect(() => {
     getMenuItemsAction().then((data) => {
@@ -43,6 +47,11 @@ export default function MenuPage() {
         <p className="mt-2 text-muted-foreground">
           Tap any item to add it to your order.
         </p>
+        {displayTable && (
+          <div className="mt-6 max-w-sm">
+            <YourOrdersStatus tableNumber={displayTable} />
+          </div>
+        )}
       </motion.div>
       <div className="space-y-16">
         {CATEGORY_ORDER.map((category) => (

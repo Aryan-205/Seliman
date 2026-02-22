@@ -66,3 +66,59 @@ model WaiterRequest {
   status       String   @default("PENDING")
   createdAt    DateTime @default(now())
 }
+
+enum QueueEntryStatus {
+  WAITING
+  CALLED
+  SEATED
+  CANCELLED
+}
+
+model QueueEntry {
+  id              String           @id @default(cuid())
+  name            String
+  partySize       Int
+  contactNumber   String
+  queueNumber     Int
+  status          QueueEntryStatus @default(WAITING)
+  estimatedAt     DateTime?
+  assignedTableId String?
+  calledAt        DateTime?
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+}
+
+enum ReservationStatus {
+  PENDING
+  CONFIRMED
+  SEATED
+  CANCELLED
+}
+
+model Reservation {
+  id         String            @id @default(cuid())
+  date       DateTime          @db.Date
+  time       String
+  partySize  Int
+  name       String
+  email      String
+  status     ReservationStatus @default(PENDING)
+  createdAt  DateTime         @default(now())
+  updatedAt  DateTime         @updatedAt
+}
+
+enum StaffRole {
+  STAFF
+  SUPERADMIN
+}
+
+model Staff {
+  id         String    @id @default(cuid())
+  name       String
+  email      String    @unique
+  role       StaffRole @default(STAFF)
+  pinHash    String?
+  isActive   Boolean   @default(true)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}

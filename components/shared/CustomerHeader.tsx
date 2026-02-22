@@ -5,13 +5,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, ShoppingBag, X, Bell } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useCartStore } from "@/store";
+import { useCartStore, useQueueStore } from "@/store";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./ThemeToggle";
 import { createWaiterRequestAction } from "@/app/actions/waiter-requests";
 
 const nav = [
   { href: "/", label: "Home" },
+  { href: "/wait", label: "Join queue" },
   { href: "/menu", label: "Menu" },
   { href: "/booking", label: "Booking" },
   { href: "/location", label: "Location" },
@@ -21,6 +22,8 @@ export function CustomerHeader() {
   const pathname = usePathname();
   const itemCount = useCartStore((s) => s.getItemCount());
   const tableNumber = useCartStore((s) => s.tableNumber);
+  const assignedTableId = useQueueStore((s) => s.assignedTableId);
+  const displayTable = tableNumber?.trim() || assignedTableId || null;
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [waiterSending, setWaiterSending] = useState(false);
   const [waiterMessage, setWaiterMessage] = useState<"success" | "error" | null>(null);
@@ -95,6 +98,14 @@ export function CustomerHeader() {
                 </Link>
               ))}
             </div>
+          )}
+          {displayTable && (
+            <Link
+              href={`/table/${displayTable}`}
+              className="text-sm font-medium px-2 py-1 rounded bg-muted hover:bg-muted/80"
+            >
+              Table {displayTable}
+            </Link>
           )}
           {tableNumber?.trim() && (
             <div className="flex items-center gap-1">

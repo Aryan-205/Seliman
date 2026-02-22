@@ -16,6 +16,16 @@
       "static/chunks/main-app.js",
       "static/chunks/app/(customer)/page.js"
     ],
+    "/(customer)/table/[id]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(customer)/table/[id]/page.js"
+    ],
+    "/(customer)/wait/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(customer)/wait/page.js"
+    ],
     "/(customer)/menu/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -46,15 +56,60 @@
       "static/chunks/main-app.js",
       "static/chunks/app/admin/page.js"
     ],
-    "/admin/qr/page": [
+    "/admin/tables/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/admin/qr/page.js"
+      "static/chunks/app/admin/tables/page.js"
     ],
-    "/(customer)/table/[id]/page": [
+    "/staff/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(customer)/table/[id]/page.js"
+      "static/chunks/app/staff/layout.js"
+    ],
+    "/staff/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/staff/page.js"
+    ],
+    "/staff/floor/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/staff/floor/page.js"
+    ],
+    "/staff/menu/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/staff/menu/page.js"
+    ],
+    "/staff/queue/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/staff/queue/page.js"
+    ],
+    "/superadmin/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/superadmin/layout.js"
+    ],
+    "/superadmin/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/superadmin/page.js"
+    ],
+    "/superadmin/menu/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/superadmin/menu/page.js"
+    ],
+    "/superadmin/staff/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/superadmin/staff/page.js"
+    ],
+    "/superadmin/qr/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/superadmin/qr/page.js"
     ]
   }
 }

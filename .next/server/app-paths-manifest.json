@@ -1,8 +1,11 @@
 {
-  "/admin/page": "app/admin/page.js",
+  "/staff/page": "app/staff/page.js",
   "/(customer)/menu/page": "app/(customer)/menu/page.js",
-  "/(customer)/booking/page": "app/(customer)/booking/page.js",
-  "/(customer)/cart/page": "app/(customer)/cart/page.js",
-  "/admin/qr/page": "app/admin/qr/page.js",
-  "/(customer)/table/[id]/page": "app/(customer)/table/[id]/page.js"
+  "/staff/floor/page": "app/staff/floor/page.js",
+  "/staff/menu/page": "app/staff/menu/page.js",
+  "/staff/queue/page": "app/staff/queue/page.js",
+  "/superadmin/page": "app/superadmin/page.js",
+  "/superadmin/menu/page": "app/superadmin/menu/page.js",
+  "/superadmin/staff/page": "app/superadmin/staff/page.js",
+  "/superadmin/qr/page": "app/superadmin/qr/page.js"
 }
